@@ -37,9 +37,6 @@ RUN npm i || :
 COPY function/ ./
 
 # Run any tests that may be available
-RUN npm test
-
-# Run any tests that may be available
 RUN npm run build
 
 # Set correct permissions to use non root user

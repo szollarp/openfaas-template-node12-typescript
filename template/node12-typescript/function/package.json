@@ -4,9 +4,8 @@
   "description": "",
   "main": "handler.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "dev": "rimraf lib && tsc-watch --onSuccess \"node --experimental-worker ./lib/handler.js\""
+    "dev": "tsc-watch --onSuccess \"node --experimental-worker ./handler.js\""
   },
   "keywords": [],
   "author": "",
@@ -14,9 +13,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/express": "^4.17.8",
-    "@types/node": "^9.6.1",
-    "rimraf": "^3.0.2",
     "tsc-watch": "^4.2.9",
-    "typescript": "^2.8.1"
+    "typescript": "^3.9.7"
   }
 }
