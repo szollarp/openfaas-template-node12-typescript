@@ -1,0 +1,21 @@
+{
+  "name": "function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "rimraf lib && tsc-watch --onSuccess \"node --experimental-worker ./lib/handler.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^9.6.1",
+    "rimraf": "^3.0.2",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^2.8.1"
+  }
+}

@@ -1,0 +1,2 @@
+language: node12-typescript
+fprocess: node index.js
