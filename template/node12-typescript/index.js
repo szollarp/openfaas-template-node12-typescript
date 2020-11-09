@@ -1,12 +1,8 @@
-// Copyright (c) Alex Ellis 2017. All rights reserved.
-// Copyright (c) OpenFaaS Author(s) 2020. All rights reserved.
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.
-
 'use strict';
 
 const express = require('express');
 const app = express();
-const handler = require('./function/handler');
+const handler = require('./function/handler').default;
 const bodyParser = require('body-parser');
 
 if (process.env.RAW_BODY === 'true') {

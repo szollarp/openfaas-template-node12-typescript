@@ -1,22 +1,26 @@
 import { IncomingHttpHeaders } from 'http';
-import { Send } from 'express';
+import { ParsedQs } from 'qs';
 
-type ReqQuery = {
-	[key: string]: undefined | string | string[] | ReqQuery | ReqQuery[];
-};
+export interface IKeyValue {
+	[key: string]: any;
+}
 
-export type FaaSHandlerEvent = {
-	body: any;
+export interface IFunctionContext {
+	httpHeaders: IKeyValue;
+	httpStatus: number;
+	fail(value: any): void;
+	headers(): IKeyValue;
+	headers(IKeyValue): IFunctionContext;
+	status(): number;
+	status(number): IFunctionContext;
+	succeed(value: any): void;
+}
+
+export interface IFunctionEvent<ReqBody = any, ReqQuery = ParsedQs> {
+	body: ReqBody;
 	headers: IncomingHttpHeaders;
 	method: string;
 	query: ReqQuery;
 	path: string;
-};
-
-export type FaasHandlerContext = {
-	cb: (err: Error, functionResult: any) => Send;
-	status: (value?: number) => FaasHandlerContext;
-	headers: (value?: IncomingHttpHeaders) => FaasHandlerContext;
-	succeed: (value?: any) => Send;
-	fail: (value?: any) => Send;
-};
+	getSecret(string): Promise<string>;
+}

@@ -1,5 +1,5 @@
 {
-  "name": "Node12Typescript",
+  "name": "openfaas-template-node12-typescript",
   "version": "1.0.0",
   "description": "",
   "main": "faas_index.js",
